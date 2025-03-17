@@ -310,6 +310,11 @@ int nl_cache_parse(struct nl_cache_ops *ops, struct sockaddr_nl *who,
 {
 	int i, err;
 
+	//check co_msg_parser
+	if(!ops || !ops->co_msg_parser){
+		return -NLE_NODEV;
+	}
+
 	if (!nlmsg_valid_hdr(nlh, ops->co_hdrsize))
 		return -NLE_MSG_TOOSHORT;
 

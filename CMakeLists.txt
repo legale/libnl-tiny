@@ -5,7 +5,7 @@ INCLUDE(GNUInstallDirs)
 
 INCLUDE_DIRECTORIES(include)
 
-ADD_DEFINITIONS(-Wall -Werror -Wextra -Wno-unused-parameter)
+ADD_DEFINITIONS(-O0 -Wall -Werror -Wextra -Wno-unused-parameter)
 STRING(REPLACE "-DNDEBUG" "" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 
 SET(SOURCES
